@@ -22,13 +22,16 @@ makeRows(16, 16);
 let boxes = document.querySelectorAll(".grid-item");
 
 // loop that listens for event listener as many times as there is boxes
+function etch(){ 
 for (let i=0; i<boxes.length; i++) {
 
     boxes[i].addEventListener('mouseover', () => {
         boxes[i].classList.add('gridBackground');
     });
 
-}
+}}
+
+etch();
 
 function removeRows() {
     for (let i=0; i<boxes.length; i++) {
@@ -40,9 +43,16 @@ function removeRows() {
 
 function promptMe(){
      rowNum = parseInt(prompt("How many rows?", "0"), 10);
+        if (isNaN(rowNum)) {
+            rowNum = parseInt(prompt("How many rows? - please enter a number", "0"), 10);
+        } else if (rowNum > 100) {
+            rowNum = 100;
+        }
      console.log(rowNum);
      removeRows();
      makeRows(rowNum, rowNum);
+     boxes = document.querySelectorAll(".grid-item");
+     etch();
 } 
 
 
