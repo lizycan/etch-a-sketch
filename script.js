@@ -30,6 +30,23 @@ for (let i=0; i<boxes.length; i++) {
 
 }
 
+function removeRows() {
+    for (let i=0; i<boxes.length; i++) {
+    var element = document.getElementById("grid-item");
+	element.parentNode.removeChild(element);
+};
+};
+
+
+function promptMe(){
+     rowNum = parseInt(prompt("How many rows?", "0"), 10);
+     console.log(rowNum);
+     removeRows();
+     makeRows(rowNum, rowNum);
+} 
+
+
+
 
 
 
