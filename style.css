@@ -13,3 +13,7 @@
     padding: 1em;
     border: 1px solid #000;
   }
+
+  .gridBackground {
+      background-color: black;
+  }
